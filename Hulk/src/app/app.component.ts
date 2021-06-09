@@ -13,44 +13,11 @@ import { ThisReceiver } from '@angular/compiler';
 export class AppComponent {
   arraylist = [];
   obj = [{ "question": "", "correct_answer": "", "incorrect_answers": [] }];
-  obj1 = [{ "question": "", "correct_answer": "" }];
   obj2: any;
-  // obj3 = [{ "question": "", "correct_answer": "" }];
-  // obj4 = [{ "question": "", "correct_answer": "" }];
-  obj3 = {};
-  obj4: any = [];
-  obj5: any;
   mp = new Map();
   mp1 = new Map();
   count = 0;
-  // obj4{[key: number]: string};
-  arraylists = [
-    {
-      "question": "what is your skill?",
-      "correct_answer": "photography",
-      "incorrect_answers": "cooking"
-    },
-    {
-      "question": "what is your skill?",
-      "correct_answer": "photography",
-      "incorrect_answers": "cooking"
-    },
-    {
-      "question": "what is your skill?",
-      "correct_answer": "photography",
-      "incorrect_answers": "cooking"
-    },
-    {
-      "question": "what is your skill?",
-      "correct_answer": "photography",
-      "incorrect_answers": "cooking"
-    },
-    {
-      "question": "what is your skill?",
-      "correct_answer": "photography",
-      "incorrect_answers": "cooking"
-    }
-  ];
+ 
   constructor(private data: DataserviceService, private toast: ToastrService) {
 
   }
