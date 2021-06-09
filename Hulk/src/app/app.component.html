@@ -1,0 +1,29 @@
+<div class="container-fluid ">
+  <div class="row">
+    <span class="cssstyle"> <strong> Please Answer the following Questions</strong></span>
+        <br>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span *ngFor="let qs of obj2 ;let j = index">
+        <p [innerHTML]="qs.question" >
+        </p>
+
+        <ng-container *ngFor="let inc of qs.incorrect_answers ;let i = index">
+          <input type="radio" (click)="Answers(inc,$event)" id="{{'rlc'+i}}" name="{{'qs'+j}}"
+            value="incorrect_answers">
+          <label for="{{'rlc'+i}}" [innerHTML]="inc"></label>
+          <br>
+        </ng-container>
+        <br>
+      </span>
+
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-8">
+        <button type="button" class="btn btn-primary" (click)="Submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

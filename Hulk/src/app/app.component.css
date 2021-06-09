@@ -1,0 +1,9 @@
+.cssstyle{
+    text-align: center;
+    font-size: 30px;
+    background-color: aqua;
+    width: 100%;
+}
+.container-fluid{
+    background-color: lightgray;
+}
