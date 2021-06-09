@@ -22,29 +22,29 @@ export class AppComponent {
 
   }
   ngOnInit() {
-    debugger
+    
     this.pageLoadata();
   }
   pageLoadata() {
-    debugger
+    
     this.data.getData()
       .subscribe(
         (results: any) => {
-          debugger
+          
           if (results == undefined || results == null || results == 'null' || results == '') {
-            debugger
-            this.toast.warning('Something went wrong. Please try again later..', '', {
+            
+            this.toast.error('Something went wrong. Please try again later..', '', {
               positionClass: 'toast-bottom-right',
               timeOut: 5000
             });
           }
           else {
             if (results) {
-              debugger
+              
               this.obj = results.results;
               this.obj2 = this.obj;
               for (let index = 0; index < this.obj.length; index++) {
-                debugger
+                
                 this.obj2[index].incorrect_answers.push(this.obj[index].correct_answer);
                 let str = 'qs' + index;
                 this.mp1.set(str, this.obj[index].correct_answer);
@@ -52,7 +52,7 @@ export class AppComponent {
 
             }
             else {
-              this.toast.warning(results.ReturnMessage, '', {
+              this.toast.error(results.ReturnMessage, '', {
                 positionClass: 'toast-bottom-right',
                 timeOut: 5000
               });
@@ -69,9 +69,9 @@ export class AppComponent {
   }
 
   Answers(event: any, event1: any) {
-    debugger
+    
     if (this.mp.has(event1.currentTarget.name)) {
-      debugger
+      
       this.mp.delete(event1.currentTarget.name);
     }
     this.mp.set(event1.currentTarget.name, event);
@@ -82,7 +82,7 @@ export class AppComponent {
 
 
   Submit() {
-    debugger
+    
     if(this.mp.size!=this.obj.length){
       this.toast.warning('Please Answer all the Questions', '', {
         positionClass: 'toast-top-right',
